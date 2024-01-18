@@ -14,7 +14,7 @@
 //     }
 // }
 
-// Solution 2: Lazy Propogation
+// Solution 2: Lazy Propogation -> jb Hme chhaiye tb hi hum sirf object ko create karengy 
 // class LoggerService {
 //     private static LoggerService instance;
 
@@ -36,7 +36,7 @@
 //     }
 // }
 
-// Solution 3: Synchronized Method
+// Solution 3: Synchronized Method -> we can get two threads so protect this from thread made block Synchronized
 // class LoggerService {
 //     private static LoggerService instance;
 
@@ -67,6 +67,7 @@ class LoggerService {
     }
 
     public static LoggerService getInstance() {
+        // double locking 
         if (instance == null) {
             synchronized (LoggerService.class) {
                 if (instance == null) {
